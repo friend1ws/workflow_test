@@ -12,12 +12,10 @@ jobs:
         sudo apt-get install -y build-essential wget
     - name: Download and install BWA
       run: |
-        wget https://github.com/lh3/bwa/archive/refs/tags/v0.7.17.tar.gz
-        tar xvfz v0.7.17.tar.gz
-        cd bwa-0.7.17
-        make
-        sudo make install
+        wget https://github.com/samtools/htslib/releases/download/1.10/htslib-1.10.tar.bz2
+        tar jxvf htslib-1.10.tar.bz2
+        cd htslib-1.10 && ./configure && make && sudo make install && cd ../
     - name: Verify BWA installation
       run: |
-        bwa
+        tabix 
 
