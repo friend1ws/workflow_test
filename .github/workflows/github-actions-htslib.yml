@@ -18,4 +18,4 @@ jobs:
     - name: Verify BWA installation
       run: |
         tabix --version 
-
+        sys exit 1
